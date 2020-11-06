@@ -45,7 +45,7 @@ topic 是逻辑上的概念，而 partition 是物理上的概念，每个 parti
 4 存储机制
 
 由于生产者生产的消息会不断追加到 log 文件末尾，为防止 log 文件过大导致数据定位效率低下，Kafka 采取了分片和索引机制，将每个 partition 分为多个 segment，每个 segment 对应两个文件：“.index” 索引文件和 “.log” 数据文件。这些文件位于同一文件下，该文件夹的命名规则为：topic 名-分区号。例如，first 这个 topic 有三分分区，则其对应的文件夹为 first-0，first-1，first-2。
-# ls /root/data/kafka/first-0        
+ ls /root/data/kafka/first-0      
 00000000000000009014.index    
 00000000000000009014.log
 00000000000000009014.timeindex
